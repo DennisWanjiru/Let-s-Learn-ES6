@@ -38,3 +38,13 @@ if(true) {
 }
 
 //console.log(pet); //Will throw a ReferenceError: name not defined because it is out of if statement block-scope
+
+//COST KEYWORD
+const PI = 3.145 //Once declared cannot be reassigned "Offers a Read-Only Access"
+let radius = 7;
+
+let area = PI * radius * radius;
+console.log(area)
+
+let PI = 4;
+console.log(PI) //Throws a SyntaxError: PI has already been declared
