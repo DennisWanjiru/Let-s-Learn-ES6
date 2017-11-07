@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6 Template Literal</title>
+</head>
+<body>
+    <script>
+      // const person = {
+      //     name: "Dennis",
+      //     age: 23,
+      //     bio: "By default, VS Code auto-updates to new versions, and collects usage data and crash report information. You may opt out of these defaults by disabling them as instructed below"
+      // };
+
+      const renderKeywords = keywords => {
+        return `
+          <ul>
+            ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+          </ul>
+        `
+      } 
+
+      const beer = {
+        name: "Tusker",
+        brewery: "EABL",
+        keywords: ["pale", "cloudy", "chrispsy", "spiced"]
+      }
+
+      const markup = `
+        <h1>${beer.name}</h1>
+        <h4>${beer.brewery}</h4>
+        ${renderKeywords(beer.keywords)}
+      `
+
+      document.body.innerHTML = markup;
+    </script>
+</body>
+</html>
