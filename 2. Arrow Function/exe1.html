@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li data-time="2.46">Flex box</li>
+        <li data-time="3.16">Javascript 30</li>
+        <li data-time="4.43">Es6</li>
+        <li data-time="7.56">React</li>
+        <li data-time="3.42">Flex boxt</li>
+        <li data-time="8.20">Redux</li>
+        <li data-time="5.26">Flex boxt</li>
+    </ul>
+
+    <script>
+        //Select all the list items and convert them into the array
+        let items = Array.from(document.querySelectorAll("[data-time]"))
+            .filter((item) => item.textContent.includes("Flex box"))
+            .map(item => item.dataset.time)
+            .map(timecode => {
+                const parts = timecode.split(".").map(part => parseFloat(part));
+                return (parts[0]*60) + parts[1]
+            })
+            .reduce((prev, curr) => prev + curr, null)
+        
+        console.log(items)
+        
+    </script>
+</body>
+</html>
