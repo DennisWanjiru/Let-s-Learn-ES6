@@ -278,12 +278,67 @@ const newArr = desc.slice(0, -2);
 console.log(newArr)
 console.log(newArr.slice(-2))
 
+//some method
+console.log(string.some(val => typeof val === "string"))
+
+//sortMethod
+//ASCII sorting
+console.log(desc.sort())
+
+// Sorts array elements in ascending order numerically.
+const compare = (first, sec) => {
+    if(first === sec)
+        return 0;
+    if (first < sec)
+        return -1;
+    else
+        return 1;
+}
+
+console.log(desc.sort(compare))
+
+//splice method
+/*
+note:-
+1: the starting point
+4: the number of elements to be deleted
+the rest: the elements to be inserted in the places of the deleted elements
+
+console.log(desc.splice(1, 4, true, "creez", {name: "Daymond"}, 2))
+console.log(desc)
+
+//toString method
+console.log(desc.toString())
+
+//unshift method
+console.log(desc.unshift(true, "creez"))
+console.log(desc)
+
+//valueOf method
+console.log(desc.valueOf())
+
 */
 
 const arr = [1, "ab", true, "cd", 2, true, "creez"];
 const nums = new Array()
-const desc = [10, 9, 15, 4, 0, 5]
-const string = ["melon","banana","apple","orange","lemon"];
+const desc = [10, 9, 15, 4, 101, 0, 5]
+const string = ["melon","banana","apple","orange","lemon"].values();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
