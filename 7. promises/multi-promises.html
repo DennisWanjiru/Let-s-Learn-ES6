@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Multiple Promises</title>
+</head>
+<body>
+	<script>
+		const weather = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve({temp: 29, condition: "Sunny weather!"});
+			}, 2000);
+		});
+
+		const tweets = new Promise((resolve, reject) => {
+			setTimeout(() => {
+				resolve(["I like the cake", "BBO, this is awesome"])
+			}, 500)
+		})
+
+
+		Promise.all([weather, tweets]).then(responses => {
+			const [tweets, weather] = responses;
+			console.log(weather, tweets)
+		})
+	</script>
+</body>
+</html>
